@@ -1,0 +1,26 @@
+#key-display{
+    font-size: 1.3rem;
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: rgba(154, 154, 154, 0.388);
+    border-radius: 5px;
+    border: 2px dashed rgb(162, 162, 162);
+    min-height: 40px;
+    min-width: 60px;
+    position: fixed;
+    bottom: 50px;
+    left: 48%;
+}
+
+img{
+    height: 30vh;
+    width: 30vw;
+}
+
+.large{
+    height: 300px;
+    width: 300px;
+}

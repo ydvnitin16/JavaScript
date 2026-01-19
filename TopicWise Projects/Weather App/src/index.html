@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="output.css" rel="stylesheet">
+  <title>Document</title>
+</head>
+
+<!-- <body class="min-h-screen w-full bg-gradient-to-b from-[#bdc3c7] to-[#2c3e50] bg-cover bg-fixed"> -->
+
+<body class="min-h-screen w-full xl:w-[1030px] bg-[#111827] bg-cover bg-fixed m-auto">
+
+  <header>
+    
+    <nav class="flex flex-col justify-center items-center mt-2">
+      <p id="error-msg"  class="hidden text-xl font-medium text-white mb-2">Please enter something</p>
+      <div
+        class="flex border-2 border-white rounded-full bg-gray-800 backdrop-blur-3xl hover:ring-2 hover:ring-blue-300 transition-all duration-300">
+        <span class="h-14 w-14 flex justify-center items-center"><i
+            class="fa-solid fa-building text-white text-xl"></i></span>
+        <input id="input" type="text" class="text-white w-[80%] py-4 pr-3 focus:outline-none" placeholder="Enter city">
+        <button id="search-btn" class="ml-2 h-14 w-14 rounded-full flex justify-center items-center cursor-pointer"><i
+            class="fa-solid fa-search text-white text-2xl"></i></button>
+      </div>
+
+    </nav>
+  </header>
+
+  <main class="lg:mt-4">
+    <div class="lg:flex lg:justify-between">
+      <section>
+        <section class="flex flex-col justify-center items-center space-y-2 mt-5 text-white">
+          <div class="text-3xl font-medium"><i class="fa-solid fa-location-dot mr-3 text-2xl"></i><span id="city">
+              </span>
+          </div>
+          <div id="temperature" class="text-8xl font-semibold">&deg</div>
+          <div id="weather-condition" class="text-2xl -mt-2 font-medium"> | </div>
+        </section>
+
+        <section class=" my-5 mx-3 text-white rounded-2xl bg-gray-800 backdrop-blur-xl px-3 py-3">
+          <div class="flex flex-col space-y-2">
+            <span class="border-b pb-2 border-gray-400">Air quality</span>
+            <span id="air-quality" class="text-xl font-medium"></span>
+            <p id="air-quality-description" class="-mt-2 truncate text-gray"></p>
+          </div>
+        </section>
+      </section>
+      <section class="grid grid-cols-3 gap-2 my-5 mx-3 text-white">
+        <div class=" flex flex-col h-30  rounded-2xl py-4 px-3.5 space-y-2 bg-gray-800 backdrop-blur-xl">
+          <span><i class="fa-solid fa-sun text-xl"></i></span>
+          <p class="text-gray-300 truncate">UV</p>
+          <p id="UV" class="truncate">1 very weak</p>
+        </div>
+        <div class=" flex flex-col h-30  rounded-2xl py-4 px-3.5 space-y-2 bg-gray-800 backdrop-blur-xl">
+          <span><i class="fa-solid fa-temperature-quarter text-xl"></i></span>
+          <p class="text-gray-300 truncate">Feels like</p>
+          <p id="feels-like" class="truncate">0&deg</p>
+        </div>
+        <div class=" flex flex-col h-30  rounded-2xl py-4 px-3.5 space-y-2 bg-gray-800 backdrop-blur-xl">
+          <span><i class="fa-solid fa-droplet text-xl"></i></span>
+          <p class="text-gray-300 truncate">Humidity</p>
+          <p id="humidity" class="truncate">0%</p>
+        </div>
+        <div class=" flex flex-col h-30  rounded-2xl py-4 px-3.5 space-y-2 bg-gray-800 backdrop-blur-xl">
+          <span><i class="fa-solid fa-wind text-xl"></i></span>
+          <p class="text-gray-300 truncate">SSE wind</p>
+          <p id="wind" class="truncate">0 mph</p>
+        </div>
+        <div class=" flex flex-col h-30  rounded-2xl py-4 px-3.5 space-y-2 bg-gray-800 backdrop-blur-xl">
+          <span><i class="fa-solid fa-arrow-down-short-wide text-xl"></i></span>
+          <p class="text-gray-300 truncate">Air pressure</p>
+          <p id="air-pressure" class="truncate">0000 hPa</p>
+        </div>
+        <div class=" flex flex-col h-30  rounded-2xl py-4 px-3.5 space-y-2 bg-gray-800 backdrop-blur-xl">
+          <span><i class="fa-solid fa-eye-low-vision text-xl"></i></span>
+          <p class="text-gray-300 truncate">Visibility</p>
+          <p id="visibility" class="truncate">0.0 km</p>
+        </div>
+      </section>
+    </div>
+
+    <section id="weekly-temp-container"
+      class="my-3 mx-3 text-white rounded-2xl px-3 py-3 overflow-x-scroll flex gap-x-2 no-scrollbar bg-gray-800 backdrop-blur-2xl lg:backdrop-blur-none">
+      
+    </section>
+  </main>
+
+  <div id="loading"
+        class="hidden fixed top-0 left-0 bg-black opacity-80 h-full w-full flex justify-center items-center">
+        <div class="flex flex-row gap-2 ">
+            <div class="w-4 h-4 rounded-full bg-blue-700 animate-bounce [animation-delay:.7s]"></div>
+            <div class="w-4 h-4 rounded-full bg-blue-700 animate-bounce [animation-delay:.3s]"></div>
+            <div class="w-4 h-4 rounded-full bg-blue-700 animate-bounce [animation-delay:.7s]"></div>
+        </div>
+    </div>
+  <script src="app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="output.css">
+    <title>Document</title>
+</head>
+
+<body class="lg:flex flex-col justify-center items-center transition-all duration-300 dark:bg-[#111827]">
+
+    <div class="text-right">
+        <span></span>
+        <input id="mode-toggle" type="checkbox" class="theme-checkbox border">
+    </div>
+
+    <form class="p-3 lg:w-2xl lg:border-2 lg:rounded-2xl  transition-all duration-300 dark:body-dark:bg-gray-800">
+        <div class="grid gap-6 mb-6 md:grid-cols-2">
+            <div>
+                <label for="first-name" class=" block font-medium mb-2 text-sm text-gray-900 transition-all duration-300 dark:text-white">First Name</label>
+                <input id="first-name" type="text" placeholder="John"
+                    class="bg-gray-50 border-gray-300 text-gray-900 text-sm border rounded-lg block w-full p-2.5 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    <span id="first-name-err" class="hidden font-medium mb-2 text-sm text-red-500 transition-all duration-300 dark:text-red-500 ">Error</span>
+            </div>
+            <div>
+                <label for="last-name" class=" block font-medium mb-2 text-sm text-gray-900 transition-all duration-300 dark:text-white">Last Name</label>
+                <input id="last-name" type="text" placeholder="Cena"
+                    class="bg-gray-50 border-gray-300 text-gray-900 text-sm border rounded-lg block w-full p-2.5 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    <span id="last-name-err" class="hidden font-medium mb-2 text-sm text-red-500 transition-all duration-300 dark:text-red-500 ">Error</span>
+            </div>
+            <div>
+                <label for="company" class=" block font-medium mb-2 text-sm text-gray-900 transition-all duration-300 dark:text-white">Company Name</label>
+                <input id="company" type="text" placeholder="Snitch"
+                    class="bg-gray-50 border-gray-300 text-gray-900 text-sm border rounded-lg block w-full p-2.5 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    <span id="company-err" class="hidden font-medium mb-2 text-sm text-red-500 transition-all duration-300 dark:text-red-500 ">Error</span>
+            </div>
+            <div>
+                <label for="phone" class=" block font-medium mb-2 text-sm text-gray-900 transition-all duration-300 dark:text-white">Phone Number</label>
+                <input id="phone" type="tel" placeholder="958-276-4851"
+                    class="bg-gray-50 border-gray-300 text-gray-900 text-sm border rounded-lg block w-full p-2.5 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    <span id="phone-err" class="hidden font-medium mb-2 text-sm text-red-500 transition-all duration-300 dark:text-red-500 ">Error</span>
+            </div>
+            <div>
+                <label for="website" class=" block font-medium mb-2 text-sm text-gray-900 transition-all duration-300 dark:text-white">Website URL</label>
+                <input id="website" type="url" placeholder="https://example.com"
+                    class="bg-gray-50 border-gray-300 text-gray-900 text-sm border rounded-lg block w-full p-2.5 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    <span id="website-err" class="hidden  font-medium mb-2 text-sm text-red-500 transition-all duration-300 dark:text-red-500 ">Error</span>
+            </div>
+            <div>
+                <label for="visitors" class=" block font-medium mb-2 text-sm text-gray-900 transition-all duration-300 dark:text-white">Unique Visitors
+                    (permonth)</label>
+                <input id="visitors" type="number" placeholder=""
+                    class="bg-gray-50 border-gray-300 text-gray-900 text-sm border rounded-lg block w-full p-2.5 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    <span id="visitors-err" class="hidden font-medium mb-2 text-sm text-red-500 transition-all duration-300 dark:text-red-500 ">Error</span>
+            </div>
+        </div>
+
+        <div class="mb-6">
+            <label for="e-mail" class=" block font-medium mb-2 text-sm text-gray-900 transition-all duration-300 dark:text-white ">Email address</label>
+            <input id="e-mail" type="email" placeholder="john.cena@company.com"
+                class="bg-gray-50 border-gray-300 text-gray-900 text-sm border rounded-lg block w-full p-2.5 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                <span id="e-mail-err" class="hidden  font-medium mb-2 text-sm text-red-500 transition-all duration-300 dark:text-red-500 ">Error</span>
+        </div>
+        <div class="mb-6">
+            <label for="password" class=" block font-medium mb-2 text-sm text-gray-900 transition-all duration-300 dark:text-white ">Password</label>
+            <input id="password" type="password" placeholder="john.cena@company.com"
+                class="bg-gray-50 border-gray-300 text-gray-900 text-sm border rounded-lg block w-full p-2.5 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                <span id="password-err" class="hidden  font-medium mb-2 text-sm text-red-500 transition-all duration-300 dark:text-red-500 ">Error</span>
+        </div>
+        <div class="mb-6">
+            <label for="confirm-password" class=" block font-medium mb-2 text-sm text-gray-900 transition-all duration-300 dark:text-white ">Confirm
+                password</label>
+            <input id="confirm-password" type="password" placeholder="john.cena@company.com"
+                class="bg-gray-50 border-gray-300 text-gray-900 text-sm border rounded-lg block w-full p-2.5 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                <span id="confirm-password-err" class="hidden font-medium mb-2 text-sm text-red-500 transition-all duration-300 dark:text-red-500 ">Error</span>
+        </div>
+        <div class="flex items-center mb-6">
+            <input id="remember" type="checkbox"
+                class="w-4 h-4 border border-gray-300 rounded-sm bg-gray-50 focus:ring-3 focus:ring-blue-300" required>
+            <label for="remember" class="ms-2 text-sm font-medium text-gray-900 transition-all duration-300 dark:text-white">i agree with the <a href="#"
+                    class="text-blue-600 hover:underline">terms and conditions</a></label>
+        </div>
+        <button id="submit" type="submit"
+            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Submit</button>
+    </form>
+    <script type="module" src="app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,233 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#dark-mode-toggle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    height: 30px;
+    width: 30px;
+    background-color: #333;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.fa-circle-half-stroke{
+    color: white;
+    font-size: 16px;
+}
+
+
+h1 {
+    color: #333;
+    text-align: center;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+input[type="text"], #edit-item-input {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#quantity-input, #edit-quantity-input {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#category-input, #sort-header select, #edit-category-input {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+#sort-header {
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+}
+
+#sort-header>:nth-child(2){
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+table button {
+    background-color: #007bff;
+}
+
+table button:hover {
+    background-color: #0056b3;
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    margin-top: 20px;
+}
+
+thead th {
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 10px;
+}
+
+tbody tr {
+    border-bottom: 1px solid #ccc;
+    margin: 1rem;
+    border-bottom: 2px solid gray;
+}
+
+tbody td {
+    padding: 2px 15px;
+    border-bottom: 1px solid rgb(223, 223, 223);
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #333;
+    color: #f4f4f4;
+}
+
+body.dark-mode .container {
+    background: #444;
+    color: #f4f4f4;
+}
+
+body.dark-mode input[type="text"], 
+body.dark-mode input[type="number"], 
+body.dark-mode select, 
+body.dark-mode button,
+body.dark-mode h1 {
+    background-color: #555;
+    color: #f4f4f4;
+    border: 1px solid #777;
+}
+body.dark-mode h1{
+    border: none;
+    background-color: #333;
+}
+
+body.dark-mode button {
+    background-color: #666;
+}
+
+body.dark-mode button:hover {
+    background-color: #555;
+}
+
+body.dark-mode table {
+    background-color: #444;
+    color: #f4f4f4;
+}
+
+body.dark-mode thead th {
+    border-bottom: 2px solid #777;
+}
+
+body.dark-mode tbody tr {
+    border-bottom: 1px solid #777;
+}
+
+body.dark-mode .modal-content {
+    background-color: #444;
+    color: #f4f4f4;
+}
+
+body.dark-mode .close {
+    color: #f4f4f4;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+
+    input[type="text"], button {
+        width: 96%;
+    }
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#save-item, #delete-item {
+    margin-top: 1rem;
+}
+
+.hide{
+    display: none;
+}
