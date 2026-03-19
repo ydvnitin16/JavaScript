@@ -36,7 +36,6 @@
 // memoizedAdd(4, 5);
 // memoizedAdd(2, 3);
 
-
 // solve the buggy code given below:
 
 // var i = 0; 1-2-3-4 console.log('var value'); global scope
@@ -49,3 +48,47 @@
 // }
 
 // solution: change the variable type var -> let
+
+// IMPLEMENT THROTTLE
+
+// function throttle(fn, delay) {
+//     let timer;
+//     return (...args) => {
+//         if (!timer) {
+//             timer = setTimeout(() => {
+//                 timer = null;
+//                 fn(...args);
+//             }, delay);
+//         }
+//     };
+// }
+
+// const throttleButton = document.getElementById("throttle");
+
+// const throttleButtonClicked = () => {
+//     console.log("Throttle Button Clicked");
+// };
+
+// const throttleButtonFn = throttle(throttleButtonClicked, 2000);
+// throttleButton.addEventListener("click", throttleButtonFn);
+
+// IMPLEMENT DEBOUNCE
+
+// function debounce(fn, delay) {
+//     let timer;
+//     return (...args) => {
+//         clearTimeout(timer)
+//         timer = setTimeout(() => {
+//             fn(...args)
+//         }, delay);
+//     }
+// }
+
+// const debounceButton = document.getElementById("debounce");
+
+// const debounceButtonClicked = () => {
+//     console.log("Debounce Button Clicked");
+// };
+
+// const debounceButtonFn = debounce(debounceButtonClicked, 2000);
+// debounceButton.addEventListener("click", debounceButtonFn);
