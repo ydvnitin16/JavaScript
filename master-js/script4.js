@@ -45,3 +45,44 @@ const memoizedSum = memoizeFn(sum);
 memoizedSum(1, 2);
 memoizedSum(3, 5);
 memoizedSum(1, 2);
+
+const employeeDept = {
+    company: "Tech Corp",
+    departments: [
+        {
+            deptName: "Engineering",
+            location: "NY",
+            employees: [
+                { id: 1, name: "Alice" },
+                { id: 2, name: "Bob" },
+            ],
+        },
+        {
+            deptName: "Sales",
+            location: "SF",
+            employees: [{ id: 3, name: "Charlie" }],
+        },
+    ],
+};
+
+function flattenAndGroupEmployees(obj) {
+    const employeesWithDept = [];
+    obj.departments.forEach((department) => {
+        const commonFields = {
+            deptName: department.deptName,
+            location: department.location,
+        };
+
+        employeesWithDept.push(
+            ...department.employees.map((emp) => {
+                return { ...commonFields, ...emp };
+            }),
+        );
+    });
+    return employeesWithDept;
+}
+
+console.log(flattenAndGroupEmployees(employeeDept));
+
+
+
