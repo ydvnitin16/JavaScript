@@ -84,5 +84,32 @@ function flattenAndGroupEmployees(obj) {
 
 console.log(flattenAndGroupEmployees(employeeDept));
 
+// Implement a pub/sub (EventEmitter) class in JS
 
+class Subscribe {
+    constructor(event, trigger) {
+        this.events = new Map();
+    }
 
+    on(event, callback) {
+        if (!this.events.has(event)) this.events.set(event, []);
+        this.events.get(event).push(callback);
+    }
+
+    emit(event, ...args) {
+        if (!this.callBacks.has(event)) return;
+        const listeners = this.callBacks.get(event);
+
+        for (const listener of listeners) listener(...args);
+    }
+}
+
+const subscribe = new Subscribe();
+subscribe.on("login", () => {
+    console.log("User Logged IN");
+});
+subscribe.on("logout", () => {
+    console.log("User Logged OUT");
+})
+
+console.log(subscribe);
