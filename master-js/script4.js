@@ -19,7 +19,7 @@ function longestSubStrWithoutRepeatingChar(str) {
     return str.split("").splice(left, maxLength).join("");
 }
 
-console.log(longestSubStrWithoutRepeatingChar(str));
+// console.log(longestSubStrWithoutRepeatingChar(str));
 
 // Implement a memoize() utility function
 
@@ -82,7 +82,7 @@ function flattenAndGroupEmployees(obj) {
     return employeesWithDept;
 }
 
-console.log(flattenAndGroupEmployees(employeeDept));
+// console.log(flattenAndGroupEmployees(employeeDept));
 
 // Implement a pub/sub (EventEmitter) class in JS
 
@@ -110,6 +110,23 @@ subscribe.on("login", () => {
 });
 subscribe.on("logout", () => {
     console.log("User Logged OUT");
-})
+});
 
-console.log(subscribe);
+// console.log(subscribe);
+
+// Implement currying — convert f(a,b,c) to f(a)(b)(c)
+
+// function mulitply(a, b, c) {
+//     return a * b * c;
+// }
+
+// console.log(mulitply(1, 2, 3));
+
+function mulitply(...a) {
+    const total = a.reduce((total, curr) => total * curr, 1);
+    return (...args) => {
+        return mulitply(total, ...args)
+    };
+}
+
+mulitply(1)(3)(3);
