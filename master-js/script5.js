@@ -93,20 +93,89 @@ function secondLargeNum(arr) {
 // }
 // console.log(flatList(arr));
 
-const promise = async (text, delay) => {
-    console.log('called')
-    return new Promise((res, rej) => {
-        setTimeout(() => {
-            res(text);
-        }, delay);
-    });
+// const promise = async (text, delay) => {
+//     console.log('called')
+//     return new Promise((res, rej) => {
+//         setTimeout(() => {
+//             res(text);
+//         }, delay);
+//     });
+// };
+
+// async function testAsyncAwaitChain() {
+//     const promise1 = await promise("First promise", 2000);
+//     const promise2 = await promise(promise1, 3000);
+//     const promise3 = await promise(promise2, 3000);
+//     console.log(promise1, promise2, promise3);
+// }
+
+// testAsyncAwaitChain()
+
+// Write a function to deep compare two objects (return true/false)
+
+const object1 = {
+    age: 20,
+    name: "nitin",
+    address: {
+        village: "Khandsa",
+        city: "Gurugram",
+        state: "Haryana",
+        country: "India",
+    },
+};
+const object2 = {
+    name: "nitin",
+    age: 20,
+    address: {
+        village: "Khandsa",
+        city: "Gurugram",
+        state: "Haryana",
+        country: "India",
+    },
+};
+const object3 = {
+    name: "JOHN",
+    age: 20,
+    address: {
+        village: "naharpur",
+        city: "Manesar",
+        state: "Haryana",
+        country: "India",
+    },
 };
 
-async function testAsyncAwaitChain() {
-    const promise1 = await promise("First promise", 2000);
-    const promise2 = await promise(promise1, 3000);
-    const promise3 = await promise(promise2, 3000);
-    console.log(promise1, promise2, promise3);
-}
+function deepCompare(object1, object2) {
+    if (object1 === object2) {
+        return true;
+    }
 
-testAsyncAwaitChain()
+    if (typeof object1 !== "object" || typeof object2 !== "object") {
+        return false;
+    }
+
+    const keys1 = Object.keys(object1);
+    const keys2 = Object.keys(object2);
+
+    const missingKeys = keys1.filter((k) => !keys2.includes(k));
+    if (missingKeys.length > 0) {
+        return false;
+    }
+
+    if (keys1.length !== keys2.length) {
+        return false;
+    }
+
+    for (let i = 0; i < keys1; i++) {
+        const key = keys2[i];
+        if (
+            typeof object1[key] === "object" &&
+            typeof object2[key] === "object"
+        ) {
+            return deepCompare(object1[key], object2[key]);
+        } else if (object1[key] !== object2[key]) {
+            return false;
+        }
+    }
+    return true;
+}
+console.log(deepCompare(object1, object3));
