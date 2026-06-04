@@ -84,13 +84,12 @@ function targetSumHash(arr, target) {
 
 // Implement your own version of bind() — myBind() on Function.prototype
 
-Function.prototype.myBind = function (obj, ...args){
+Function.prototype.myBind = function (obj, ...args) {
     const originalFn = this;
     return () => {
         originalFn.call(obj, ...args);
     };
 };
-
 
 function greeting(greeting) {
     console.log(greeting + " " + this.name);
@@ -99,4 +98,73 @@ const user = { name: "Nitin", age: 20 };
 
 const hiName = greeting.myBind(user, "Hi");
 
-hiName()
+// hiName()
+
+const task3 = () =>
+    new Promise((resolve) => {
+        setTimeout(() => {
+            console.log("Task 1 done");
+            resolve();
+        }, 4000);
+    });
+const task1 = () =>
+    new Promise((resolve) => {
+        setTimeout(() => {
+            console.log("Task 1 done");
+            resolve();
+        }, 2000);
+    });
+
+const task4 = () =>
+    new Promise((resolve) => {
+        setTimeout(() => {
+            console.log("Task 2 done");
+            resolve();
+        }, 4000);
+    });
+const task2 = () =>
+    new Promise((resolve) => {
+        setTimeout(() => {
+            console.log("Task 2 done");
+            resolve();
+        }, 1000);
+    });
+
+class Queue {
+    constructor() {
+        this.tasks = [];
+        this.inProcess = false;
+    }
+
+    add(task) {
+        this.tasks = [...this.tasks, task];
+    }
+
+    async execute() {
+        if (this.tasks.length > 0) {
+            if (this.inProcess === true) {
+                return;
+            }
+
+            this.inProcess = true;
+
+            try {
+                while (this.tasks.length > 0) {
+                    const task = this.tasks.shift();
+                    await task();
+                }
+            } finally {
+                this.inProcess = false;
+            }
+        }
+    }
+}
+
+const queue = new Queue();
+queue.execute();
+queue.add(task1);
+queue.add(task2);
+
+queue.add(task3);
+queue.add(task4);
+console.log();
